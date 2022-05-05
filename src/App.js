@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useContext } from "react";
+import Header from "./components/Layout/Header/Header";
+import "./App.css";
+import Meals from "./components/Meals/Meals";
+import ShowModal from "./stores/ShowModal";
+import Cart from "./components/Cart/Cart";
 
 function App() {
+  let overlayRender = "";
+  const ctx_modal = useContext(ShowModal);
+  if (ctx_modal.visibility) {
+    console.log("showing modal");
+    overlayRender = <Cart></Cart>;
+  } else {
+    overlayRender = "";
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      {overlayRender}
+      <div className="App">
+        <Header></Header>
+        <main>
+          <Meals></Meals>
+        </main>
+      </div>
+    </React.Fragment>
   );
 }
 

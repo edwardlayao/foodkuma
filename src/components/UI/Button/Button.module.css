@@ -1,0 +1,33 @@
+.button {
+  border: none;
+  margin: 0;
+  cursor: pointer;
+}
+
+.button:hover {
+  animation: btnScaleUp 0.1s ease-in-out;
+  transform: scale(1.1);
+}
+
+.button:not(:hover) {
+  animation: btnScaleDown 0.1s ease-in-out;
+  transform: scale(1);
+}
+
+@keyframes btnScaleUp {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes btnScaleDown {
+  0% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

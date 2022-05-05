@@ -1,0 +1,28 @@
+.summaryContainer {
+  position: absolute;
+  background-color: #fcad47;
+  width: 50%;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  color: white;
+  right: 310px;
+  top: -200px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+  color: rgb(43, 24, 0);
+  text-align: center;
+}
+
+.summaryContainer header {
+  text-align: center;
+}
+
+.summaryTextHeader {
+  font-size: 2.4rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.summaryContent p {
+  font-size: 1.2rem;
+  font: bold;
+}

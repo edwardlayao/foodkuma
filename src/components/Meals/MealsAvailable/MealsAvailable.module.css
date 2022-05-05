@@ -1,0 +1,11 @@
+.menuListContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 50%;
+  margin: 0 auto;
+  padding: 1rem;
+  background-color: #fdae477e;
+}

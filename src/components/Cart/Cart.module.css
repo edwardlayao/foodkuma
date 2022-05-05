@@ -1,0 +1,46 @@
+.cart-container {
+  width: 100%;
+  padding: 1rem;
+  background-color: whitesmoke;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0.5rem;
+  gap: 0.5rem;
+}
+
+.close-btn {
+  border: 1px solid orangered;
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+  color: orangered;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.total-items-container {
+  padding: 0.2rem 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.total-price-text {
+  margin: 0.5rem 0;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.order-btn {
+  background-color: orangered;
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+}
