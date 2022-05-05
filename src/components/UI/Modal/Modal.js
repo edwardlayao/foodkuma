@@ -2,9 +2,9 @@ import React, { useContext } from "react";
 import styles from "./Modal.module.css";
 import ReactDOM from "react-dom";
 import Backdrop from "./Backdrop";
+import ShowModal from "../../../stores/ShowModal";
 
 const overlayElement = document.getElementById("overlays");
-console.log(overlayElement);
 
 const Overlay = (props) => {
   return (
@@ -15,11 +15,13 @@ const Overlay = (props) => {
 };
 
 const Modal = (props) => {
+  const ctx_modal = useContext(ShowModal);
   return (
     <>
-      {ReactDOM.createPortal(<Backdrop />, overlayElement)}
       {ReactDOM.createPortal(
-        <Overlay>{props.children}</Overlay>,
+        <Backdrop onClose={ctx_modal.hide}>
+          <Overlay>{props.children}</Overlay>
+        </Backdrop>,
         overlayElement
       )}
     </>

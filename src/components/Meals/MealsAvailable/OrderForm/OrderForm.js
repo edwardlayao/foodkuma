@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import styles from "./OrderForm.module.css";
 import Input from "../../../UI/Input/Input";
 import Button from "../../../UI/Button/Button";
+import CartStore from "../../../../stores/CartStore";
 
 const OrderForm = (props) => {
+  const ctx_cart = useContext(CartStore);
+  const [formInput, setFormInput] = useState("");
+
   return (
     <>
       <div className={styles["order-form-container"]}>
@@ -35,6 +39,7 @@ const OrderForm = (props) => {
   function onSubmitHandler(event) {
     event.preventDefault();
     console.log(event);
+    // ctx_cart.addToCart();
   }
 };
 

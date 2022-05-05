@@ -4,11 +4,14 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { ShowModalProvider } from "../src/stores/ShowModal";
+import { CartStoreProvider } from "./stores/CartStore";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <ShowModalProvider>
-      <App />
+      <CartStoreProvider>
+        <App />
+      </CartStoreProvider>
     </ShowModalProvider>
   </React.StrictMode>
 );
