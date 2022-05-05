@@ -1,8 +1,7 @@
-import React, { useContext } from "react";
+import React from "react";
 import styles from "./Modal.module.css";
 import ReactDOM from "react-dom";
 import Backdrop from "./Backdrop";
-import ShowModal from "../../../stores/ShowModal";
 
 const overlayElement = document.getElementById("overlays");
 
@@ -15,11 +14,10 @@ const Overlay = (props) => {
 };
 
 const Modal = (props) => {
-  const ctx_modal = useContext(ShowModal);
   return (
     <>
       {ReactDOM.createPortal(
-        <Backdrop onClose={ctx_modal.hide}>
+        <Backdrop>
           <Overlay>{props.children}</Overlay>
         </Backdrop>,
         overlayElement

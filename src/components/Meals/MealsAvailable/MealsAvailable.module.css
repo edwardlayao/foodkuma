@@ -1,3 +1,27 @@
+.menuHeader {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: whitesmoke;
+}
+
+.menuHeader img {
+  width: 30%;
+}
+
+.menuHeader img:hover {
+  transform: scale(1.1);
+}
+
+.menuTextHeader {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
 .menuListContainer {
   display: flex;
   flex-direction: column;
@@ -7,5 +31,5 @@
   width: 50%;
   margin: 0 auto;
   padding: 1rem;
-  background-color: #fdae477e;
+  background-color: #fcad47;
 }

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useRef } from "react";
 import styles from "./OrderForm.module.css";
 import Input from "../../../UI/Input/Input";
 import Button from "../../../UI/Button/Button";
@@ -6,7 +6,7 @@ import CartStore from "../../../../stores/CartStore";
 
 const OrderForm = (props) => {
   const ctx_cart = useContext(CartStore);
-  const [formInput, setFormInput] = useState("");
+  const inputRef = useRef();
 
   return (
     <>
@@ -16,6 +16,7 @@ const OrderForm = (props) => {
           className={styles["order-form-control"]}
         >
           <Input
+            ref={inputRef}
             appendClass={{ label: styles["label"], input: "" }}
             inputOptions={{
               id: props.id,
@@ -27,23 +28,26 @@ const OrderForm = (props) => {
             }}
             label={"Amount"}
           ></Input>
-          <Button
-            appendClass={styles["add2cart-btn"]}
-            onClickHandler={null}
-            text={"Add to Cart"}
-          ></Button>
+          <Button appendClass={styles["add2cart-btn"]} onClickHandler={null}>
+            Add to Cart
+          </Button>
         </form>
       </div>
     </>
   );
   function onSubmitHandler(event) {
     event.preventDefault();
+    const amountInput = inputRef.current.value;
+    let totalPrice = props.price * parseInt(amountInput);
+
     ctx_cart.addToCart({
+      id: `${Date.now()}*${Math.random()}`,
       name: props.name,
       desc: props.desc,
-      price: props.price,
-      count: 1,
+      amount: parseInt(amountInput),
+      price: totalPrice.toFixed(2),
     });
+    inputRef.current.value = "1";
   }
 };
 

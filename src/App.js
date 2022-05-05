@@ -10,7 +10,7 @@ function App() {
   let overlayRender = "";
   const ctx_modal = useContext(ShowModal);
   const ctx_cart = useContext(CartStore);
-  console.log(ctx_cart.cartItemList);
+
   if (ctx_modal.visibility) {
     overlayRender = <Cart></Cart>;
   } else {

@@ -9,7 +9,10 @@ const CartButton = (props) => {
     <React.Fragment>
       <div className={styles.cartContainer}>
         <button className={styles.cartbtn} onClick={props.clickHandler}>
-          <img src="https://img.icons8.com/fluency/48/000000/shopping-cart-promotion.png" />
+          <img
+            src="https://img.icons8.com/fluency/48/000000/shopping-cart-promotion.png"
+            alt="cart button"
+          />
         </button>
         <p className={styles.yourcart}>Your Cart</p>
         <p className={styles.count}>{ctx_cart.cartItemCount}</p>

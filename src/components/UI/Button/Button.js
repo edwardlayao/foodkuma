@@ -9,7 +9,7 @@ const Button = (props) => {
           onClick={props.onClickHandler}
           className={`${styles.button} ${props.appendClass}`}
         >
-          {props.text}
+          {props.children}
         </button>
       </div>
     </>
