@@ -38,8 +38,12 @@ const OrderForm = (props) => {
   );
   function onSubmitHandler(event) {
     event.preventDefault();
-    console.log(event);
-    // ctx_cart.addToCart();
+    ctx_cart.addToCart({
+      name: props.name,
+      desc: props.desc,
+      price: props.price,
+      count: 1,
+    });
   }
 };
 

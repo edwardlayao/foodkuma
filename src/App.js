@@ -4,12 +4,14 @@ import "./App.css";
 import Meals from "./components/Meals/Meals";
 import ShowModal from "./stores/ShowModal";
 import Cart from "./components/Cart/Cart";
+import CartStore from "./stores/CartStore";
 
 function App() {
   let overlayRender = "";
   const ctx_modal = useContext(ShowModal);
+  const ctx_cart = useContext(CartStore);
+  console.log(ctx_cart.cartItemList);
   if (ctx_modal.visibility) {
-    console.log("showing modal");
     overlayRender = <Cart></Cart>;
   } else {
     overlayRender = "";

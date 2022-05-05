@@ -11,7 +11,12 @@ const MenuItem = (props) => {
           <p className={styles.headertext}>{props.name}</p>
           <p className={styles.desc}>{props.desc}</p>
           <p className={styles.price}>${props.price}</p>
-          <OrderForm id={props.id}></OrderForm>
+          <OrderForm
+            id={props.id}
+            name={props.name}
+            desc={props.desc}
+            price={props.price}
+          ></OrderForm>
         </div>
         <div className={styles.itemsRightDivider}>
           <img className={styles.menuImg} src={`${props.img}`} alt="food" />
