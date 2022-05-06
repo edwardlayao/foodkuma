@@ -39,7 +39,7 @@ const Cart = (props) => {
       <Card appendClass={styles["cart-container"]}>
         <div className={styles["total-items-container"]}>
           {cartListRender}
-          <h1>Total Price: {ctx_cart.cartTotalPrice}</h1>
+          <h3>Total Price: {ctx_cart.cartTotalPrice}</h3>
         </div>
         <div className={styles["button-container"]}>
           <Button
